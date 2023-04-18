@@ -3,6 +3,7 @@ import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
 import { Statistics } from 'components/Statistics/Statistics';
 import { Notification } from 'components/Notification/Notification';
 import { Section } from 'components/Title/Title';
+import { Container } from './Feedback.styled';
 
 export class Feedback extends Component {
   state = {
@@ -39,7 +40,7 @@ export class Feedback extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
             onGood={this.onGood}
@@ -60,7 +61,7 @@ export class Feedback extends Component {
             />
           )}
         </Section>
-      </div>
+      </Container>
     );
   }
 }

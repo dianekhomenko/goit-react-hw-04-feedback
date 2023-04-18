@@ -1,12 +1,14 @@
+import { Container } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
+import { Button } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
   return (
-    <>
-      <button onClick={onGood}>Good</button>
-      <button onClick={onNeutral}>Neutral</button>
-      <button onClick={onBad}>Bad</button>
-    </>
+    <Container>
+      <Button onClick={onGood}>Good</Button>
+      <Button onClick={onNeutral}>Neutral</Button>
+      <Button onClick={onBad}>Bad</Button>
+    </Container>
   );
 };
 
