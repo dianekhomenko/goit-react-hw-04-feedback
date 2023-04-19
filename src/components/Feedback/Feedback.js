@@ -12,23 +12,12 @@ export class Feedback extends Component {
     bad: 0,
   };
 
-  onGood = () => {
-    this.setState(prevState => ({
-      good: prevState.good + 1,
-    }));
-  };
+  onMark = (event) => {
+   this.setState(prevState => ({
+     [event.target.name]: prevState[event.target.name] + 1,
+   }));
+}
 
-  onNeutral = () => {
-    this.setState(prevState => ({
-      neutral: prevState.neutral + 1,
-    }));
-  };
-
-  onBad = () => {
-    this.setState(prevState => ({
-      bad: prevState.bad + 1,
-    }));
-  };
   countTotalFeedback = () => {
     return this.state.good + this.state.neutral + this.state.bad;
   };
@@ -43,9 +32,7 @@ export class Feedback extends Component {
       <Container>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            onGood={this.onGood}
-            onNeutral={this.onNeutral}
-            onBad={this.onBad}
+            onMark={this.onMark}
           />
         </Section>
         <Section title="Statistics">
