@@ -2,16 +2,16 @@ import { Container } from './FeedbackOptions.styled';
 import PropTypes from 'prop-types';
 import { Button } from './FeedbackOptions.styled';
 
-export const FeedbackOptions = ({ onMark }) => {
+export const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
   return (
     <Container>
-      <Button onClick={onMark} name="good">
+      <Button onClick={onGood} name="good">
         Good
       </Button>
-      <Button onClick={onMark} name="neutral">
+      <Button onClick={onNeutral} name="neutral">
         Neutral
       </Button>
-      <Button onClick={onMark} name="bad">
+      <Button onClick={onBad} name="bad">
         Bad
       </Button>
     </Container>
