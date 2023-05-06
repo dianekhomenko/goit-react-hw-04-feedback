@@ -19,5 +19,7 @@ export const FeedbackOptions = ({ onGood, onNeutral, onBad }) => {
 };
 
 FeedbackOptions.propTypes = {
-  onMark: PropTypes.func,
+  onGood: PropTypes.func,
+  onNeutral: PropTypes.func,
+  onBad: PropTypes.func,
 };

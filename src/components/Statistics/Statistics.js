@@ -23,11 +23,11 @@ export const Statistics = ({
       </div>
       <div>
         <span>Total:</span>
-        <span>{total()}</span>
+        <span>{total}</span>
       </div>
       <div>
         <span>Positive feedback:</span>
-        <span>{positivePercentage()}%</span>
+        <span>{positivePercentage}%</span>
       </div>
     </div>
   );
@@ -37,6 +37,6 @@ Statistics.propTypes = {
   good: PropTypes.number,
   bad: PropTypes.number,
   neutral: PropTypes.number,
-  total: PropTypes.func,
-  positivePercentage: PropTypes.func,
+  total: PropTypes.number,
+  positivePercentage: PropTypes.number,
 };
