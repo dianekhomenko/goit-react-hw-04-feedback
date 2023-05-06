@@ -10,18 +10,6 @@ export const Feedback = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const onGood = () => {
-    setGood(prevState => prevState + 1);
-  };
-
-  const onNeutral = () => {
-    setNeutral(prevState => prevState + 1);
-  };
-  
-  const onBad = () => {
-    setBad(prevState => prevState + 1);
-  };
-
   const countTotalFeedback = useMemo(() => {
     return good + neutral + bad;
   }, [good, neutral, bad]);
@@ -35,7 +23,11 @@ export const Feedback = () => {
   return (
     <Container>
       <Section title="Please leave feedback">
-        <FeedbackOptions onGood={onGood} onNeutral={onNeutral} onBad={onBad} />
+        <FeedbackOptions
+          onGood={() => setGood(good + 1)}
+          onNeutral={() => setNeutral(neutral + 1)}
+          onBad={() => setBad(bad + 1)}
+        />
       </Section>
       <Section title="Statistics">
         {countTotalFeedback === 0 ? (
